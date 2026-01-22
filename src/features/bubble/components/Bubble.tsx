@@ -98,7 +98,7 @@ export const Bubble = (props: BubbleProps) => {
           'z-index': 42424242,
           'border-radius': '20px',
           'backdrop-filter': 'blur(20px)',
-          'border': '1px solid rgba(255, 255, 255, 0.2)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
           bottom: `${Math.min(buttonPosition().bottom + buttonSize + 10, window.innerHeight - chatWindowBottom)}px`,
           right: `${Math.max(0, Math.min(buttonPosition().right, window.innerWidth - (bubbleProps.theme?.chatWindow?.width ?? 410) - 10))}px`,
         }}

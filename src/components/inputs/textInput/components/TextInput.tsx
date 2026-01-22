@@ -148,8 +148,8 @@ export const TextInput = (props: TextInputProps) => {
         color: props.textColor ?? defaultTextColor,
         'border-top': '1px solid rgba(0, 0, 0, 0.05)',
         'backdrop-filter': 'blur(10px)',
-        'background': 'rgba(255, 255, 255, 0.9)',
-        'padding': '16px',
+        background: 'rgba(255, 255, 255, 0.9)',
+        padding: '16px',
         'border-radius': '0 0 20px 20px',
       }}
       onKeyDown={handleKeyDown}
@@ -170,7 +170,10 @@ export const TextInput = (props: TextInputProps) => {
               on:click={handleImageUploadClick}
             >
               <svg viewBox="0 0 24 24" width="18" height="18" class="text-gray-600">
-                <path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                <path
+                  fill="currentColor"
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                />
               </svg>
             </ImageUploadButton>
             <input
@@ -226,8 +229,8 @@ export const TextInput = (props: TextInputProps) => {
             on:click={props.onMicrophoneClicked}
           >
             <svg viewBox="0 0 24 24" width="18" height="18" class="text-gray-600">
-              <path fill="currentColor" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-              <path fill="currentColor" d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+              <path fill="currentColor" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+              <path fill="currentColor" d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
             </svg>
           </RecordAudioButton>
         ) : null}
@@ -239,7 +242,7 @@ export const TextInput = (props: TextInputProps) => {
           on:click={submit}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" class="text-white">
-            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
           </svg>
         </SendButton>
       </div>

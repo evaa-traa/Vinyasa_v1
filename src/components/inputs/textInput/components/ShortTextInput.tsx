@@ -49,10 +49,10 @@ export const ShortTextInput = (props: ShortTextInputProps) => {
         'line-height': '1.6',
         resize: 'none',
         height: `${props.value !== '' ? height() : DEFAULT_HEIGHT}px`,
-        'background': 'rgba(255, 255, 255, 0.8)',
-        'border': '1px solid rgba(0, 0, 0, 0.1)',
+        background: 'rgba(255, 255, 255, 0.8)',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
         'border-radius': '12px',
-        'transition': 'all 0.2s ease-out',
+        transition: 'all 0.2s ease-out',
       }}
       onInput={handleInput}
       onKeyDown={handleKeyDown}

@@ -2401,7 +2401,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 'border-top-right-radius': props.isFullPage ? '0px' : '20px',
                 'border-bottom': '1px solid rgba(0, 0, 0, 0.05)',
                 'backdrop-filter': 'blur(10px)',
-                'background': 'rgba(255, 255, 255, 0.8)',
+                background: 'rgba(255, 255, 255, 0.8)',
               }}
             >
               <Show when={props.titleAvatarSrc}>
@@ -2425,7 +2425,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   title="Full Screen"
                 >
                   <svg viewBox="0 0 24 24" width="16" height="16" class="text-gray-600">
-                    <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                    <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
                   </svg>
                 </button>
                 <button
@@ -2433,7 +2433,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   title="Minimize"
                 >
                   <svg viewBox="0 0 24 24" width="16" height="16" class="text-gray-600">
-                    <path fill="currentColor" d="M19 13H5v-2h14v2z"/>
+                    <path fill="currentColor" d="M19 13H5v-2h14v2z" />
                   </svg>
                 </button>
                 <DeleteButton
@@ -2444,7 +2444,10 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   on:click={clearChat}
                 >
                   <svg viewBox="0 0 24 24" width="16" height="16" class="text-red-500">
-                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path
+                      fill="currentColor"
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
                   </svg>
                 </DeleteButton>
               </div>

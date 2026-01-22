@@ -53,67 +53,67 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
         <div
           class="modern-fullscreen-overlay"
           style={{
-            'background': 'linear-gradient(135deg, #f8fafc, #e2e8f0)',
+            background: 'linear-gradient(135deg, #f8fafc, #e2e8f0)',
             height: props.theme?.chatWindow?.height ? `${props.theme?.chatWindow?.height.toString()}px` : '100dvh',
             width: props.theme?.chatWindow?.width ? `${props.theme?.chatWindow?.width.toString()}px` : '100%',
             margin: '0px',
             overflow: 'hidden',
-            'display': 'flex',
+            display: 'flex',
             'justify-content': 'center',
             'align-items': 'center',
-            'padding': '20px',
+            padding: '20px',
           }}
         >
           <div
             class="modern-chat-window modern-window-enter"
             style={{
               'max-width': '960px',
-              'width': '100%',
-              'height': 'calc(100dvh - 40px)',
-              'margin': '0 auto',
+              width: '100%',
+              height: 'calc(100dvh - 40px)',
+              margin: '0 auto',
               'border-radius': '20px',
               'box-shadow': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-              'background': 'rgba(255, 255, 255, 0.95)',
+              background: 'rgba(255, 255, 255, 0.95)',
               'backdrop-filter': 'blur(20px)',
-              'border': '1px solid rgba(255, 255, 255, 0.2)',
-              'overflow': 'hidden',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              overflow: 'hidden',
             }}
           >
-          <Bot
-            backgroundColor={props.theme?.chatWindow?.backgroundColor}
-            formBackgroundColor={props.theme?.form?.backgroundColor}
-            formTextColor={props.theme?.form?.textColor}
-            badgeBackgroundColor={props.theme?.chatWindow?.backgroundColor}
-            bubbleBackgroundColor={props.theme?.button?.backgroundColor ?? defaultButtonColor}
-            bubbleTextColor={props.theme?.button?.iconColor ?? defaultIconColor}
-            showTitle={props.theme?.chatWindow?.showTitle}
-            showAgentMessages={props.theme?.chatWindow?.showAgentMessages}
-            title={props.theme?.chatWindow?.title}
-            titleAvatarSrc={props.theme?.chatWindow?.titleAvatarSrc}
-            titleTextColor={props.theme?.chatWindow?.titleTextColor}
-            titleBackgroundColor={props.theme?.chatWindow?.titleBackgroundColor}
-            welcomeMessage={props.theme?.chatWindow?.welcomeMessage}
-            errorMessage={props.theme?.chatWindow?.errorMessage}
-            poweredByTextColor={props.theme?.chatWindow?.poweredByTextColor}
-            textInput={props.theme?.chatWindow?.textInput}
-            botMessage={props.theme?.chatWindow?.botMessage}
-            userMessage={props.theme?.chatWindow?.userMessage}
-            feedback={props.theme?.chatWindow?.feedback}
-            fontSize={props.theme?.chatWindow?.fontSize}
-            footer={props.theme?.chatWindow?.footer}
-            starterPrompts={props.theme?.chatWindow?.starterPrompts}
-            chatflowid={props.chatflowid}
-            chatflowConfig={props.chatflowConfig}
-            apiHost={props.apiHost}
-            onRequest={props.onRequest}
-            isFullPage={true}
-            observersConfig={props.observersConfig}
-            starterPromptFontSize={props.theme?.chatWindow?.starterPromptFontSize}
-            clearChatOnReload={props.theme?.chatWindow?.clearChatOnReload}
-            disclaimer={props.theme?.disclaimer}
-            dateTimeToggle={props.theme?.chatWindow?.dateTimeToggle}
-            renderHTML={props.theme?.chatWindow?.renderHTML}
-          />
+            <Bot
+              backgroundColor={props.theme?.chatWindow?.backgroundColor}
+              formBackgroundColor={props.theme?.form?.backgroundColor}
+              formTextColor={props.theme?.form?.textColor}
+              badgeBackgroundColor={props.theme?.chatWindow?.backgroundColor}
+              bubbleBackgroundColor={props.theme?.button?.backgroundColor ?? defaultButtonColor}
+              bubbleTextColor={props.theme?.button?.iconColor ?? defaultIconColor}
+              showTitle={props.theme?.chatWindow?.showTitle}
+              showAgentMessages={props.theme?.chatWindow?.showAgentMessages}
+              title={props.theme?.chatWindow?.title}
+              titleAvatarSrc={props.theme?.chatWindow?.titleAvatarSrc}
+              titleTextColor={props.theme?.chatWindow?.titleTextColor}
+              titleBackgroundColor={props.theme?.chatWindow?.titleBackgroundColor}
+              welcomeMessage={props.theme?.chatWindow?.welcomeMessage}
+              errorMessage={props.theme?.chatWindow?.errorMessage}
+              poweredByTextColor={props.theme?.chatWindow?.poweredByTextColor}
+              textInput={props.theme?.chatWindow?.textInput}
+              botMessage={props.theme?.chatWindow?.botMessage}
+              userMessage={props.theme?.chatWindow?.userMessage}
+              feedback={props.theme?.chatWindow?.feedback}
+              fontSize={props.theme?.chatWindow?.fontSize}
+              footer={props.theme?.chatWindow?.footer}
+              starterPrompts={props.theme?.chatWindow?.starterPrompts}
+              chatflowid={props.chatflowid}
+              chatflowConfig={props.chatflowConfig}
+              apiHost={props.apiHost}
+              onRequest={props.onRequest}
+              isFullPage={true}
+              observersConfig={props.observersConfig}
+              starterPromptFontSize={props.theme?.chatWindow?.starterPromptFontSize}
+              clearChatOnReload={props.theme?.chatWindow?.clearChatOnReload}
+              disclaimer={props.theme?.disclaimer}
+              dateTimeToggle={props.theme?.chatWindow?.dateTimeToggle}
+              renderHTML={props.theme?.chatWindow?.renderHTML}
+            />
           </div>
         </div>
       </Show>
