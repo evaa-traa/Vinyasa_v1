@@ -42,12 +42,17 @@ export const ShortTextInput = (props: ShortTextInputProps) => {
   return (
     <textarea
       ref={props.ref}
-      class="focus:outline-none bg-transparent px-4 py-4 flex-1 w-full h-full min-h-[56px] max-h-[128px] text-input disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 "
+      class="focus:outline-none bg-transparent px-4 py-3 flex-1 w-full h-full min-h-[40px] max-h-[128px] text-input disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 modern-input modern-font"
       disabled={props.disabled}
       style={{
-        'font-size': props.fontSize ? `${props.fontSize}px` : '16px',
+        'font-size': props.fontSize ? `${props.fontSize}px` : '14px',
+        'line-height': '1.6',
         resize: 'none',
         height: `${props.value !== '' ? height() : DEFAULT_HEIGHT}px`,
+        'background': 'rgba(255, 255, 255, 0.8)',
+        'border': '1px solid rgba(0, 0, 0, 0.1)',
+        'border-radius': '12px',
+        'transition': 'all 0.2s ease-out',
       }}
       onInput={handleInput}
       onKeyDown={handleKeyDown}

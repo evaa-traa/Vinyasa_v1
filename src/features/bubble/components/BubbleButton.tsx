@@ -89,15 +89,18 @@ export const BubbleButton = (props: Props) => {
         part="button"
         onClick={handleButtonClick}
         onMouseDown={onMouseDown}
-        class={`fixed shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in`}
+        class={`fixed shadow-lg hover:shadow-xl active:shadow-md transition-all duration-300 ease-out flex justify-center items-center animate-fade-in modern-chat-button`}
         style={{
-          'background-color': props.backgroundColor ?? defaultButtonColor,
+          'background': props.backgroundColor ? `linear-gradient(135deg, ${props.backgroundColor}, ${props.backgroundColor}dd)` : 'linear-gradient(135deg, #4f46e5, #6366f1)',
           'z-index': 42424242,
           right: `${position().right}px`,
           bottom: `${position().bottom}px`,
           width: `${buttonSize}px`,
           height: `${buttonSize}px`,
           cursor: props.dragAndDrop ? 'grab' : 'pointer',
+          'border-radius': '16px',
+          'backdrop-filter': 'blur(10px)',
+          'border': '1px solid rgba(255, 255, 255, 0.1)',
         }}
       >
         <Show when={isNotDefined(props.customIconSrc)} keyed>
@@ -105,12 +108,13 @@ export const BubbleButton = (props: Props) => {
             viewBox="0 0 24 24"
             style={{
               stroke: props.iconColor ?? defaultIconColor,
+              'filter': 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'
             }}
             class={
-              `stroke-2 fill-transparent absolute duration-200 transition ` + (props.isBotOpened ? 'scale-0 opacity-0' : 'scale-100 opacity-100')
+              `stroke-2 fill-transparent absolute duration-300 transition-all ease-out ` + (props.isBotOpened ? 'scale-0 opacity-0 rotate-12' : 'scale-100 opacity-100 rotate-0')
             }
-            width={buttonSize * 0.6}
-            height={buttonSize * 0.6}
+            width={buttonSize * 0.5}
+            height={buttonSize * 0.5}
           >
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
           </svg>
@@ -118,10 +122,12 @@ export const BubbleButton = (props: Props) => {
         <Show when={props.customIconSrc}>
           <img
             src={props.customIconSrc}
-            class={'rounded-full object-cover' + (props.isBotOpened ? 'scale-0 opacity-0' : 'scale-100 opacity-100')}
+            class={'rounded-2xl object-cover' + (props.isBotOpened ? 'scale-0 opacity-0 rotate-12' : 'scale-100 opacity-100 rotate-0')}
             style={{
-              width: `${buttonSize * 0.6}px`,
-              height: `${buttonSize * 0.6}px`,
+              width: `${buttonSize * 0.5}px`,
+              height: `${buttonSize * 0.5}px`,
+              'filter': 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))',
+              'transition': 'all 0.3s ease-out'
             }}
             alt="Bubble button icon"
           />
@@ -129,10 +135,10 @@ export const BubbleButton = (props: Props) => {
 
         <svg
           viewBox="0 0 24 24"
-          style={{ fill: props.iconColor ?? 'white' }}
-          class={`absolute duration-200 transition ` + (props.isBotOpened ? 'scale-100 rotate-0 opacity-100' : 'scale-0 -rotate-180 opacity-0')}
-          width={buttonSize * 0.6}
-          height={buttonSize * 0.6}
+          style={{ fill: props.iconColor ?? 'white', 'filter': 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' }}
+          class={`absolute duration-300 transition-all ease-out ` + (props.isBotOpened ? 'scale-100 rotate-0 opacity-100' : 'scale-0 -rotate-180 opacity-0')}
+          width={buttonSize * 0.5}
+          height={buttonSize * 0.5}
         >
           <path
             fill-rule="evenodd"

@@ -51,14 +51,34 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
       <style>{styles}</style>
       <Show when={isBotDisplayed()}>
         <div
+          class="modern-fullscreen-overlay"
           style={{
-            'background-color': props.theme?.chatWindow?.backgroundColor || '#ffffff',
+            'background': 'linear-gradient(135deg, #f8fafc, #e2e8f0)',
             height: props.theme?.chatWindow?.height ? `${props.theme?.chatWindow?.height.toString()}px` : '100dvh',
             width: props.theme?.chatWindow?.width ? `${props.theme?.chatWindow?.width.toString()}px` : '100%',
             margin: '0px',
-            overflow: 'hidden', // Ensure no extra scrolling due to content overflow
+            overflow: 'hidden',
+            'display': 'flex',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'padding': '20px',
           }}
         >
+          <div
+            class="modern-chat-window modern-window-enter"
+            style={{
+              'max-width': '960px',
+              'width': '100%',
+              'height': 'calc(100dvh - 40px)',
+              'margin': '0 auto',
+              'border-radius': '20px',
+              'box-shadow': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+              'background': 'rgba(255, 255, 255, 0.95)',
+              'backdrop-filter': 'blur(20px)',
+              'border': '1px solid rgba(255, 255, 255, 0.2)',
+              'overflow': 'hidden',
+            }}
+          >
           <Bot
             backgroundColor={props.theme?.chatWindow?.backgroundColor}
             formBackgroundColor={props.theme?.form?.backgroundColor}
@@ -94,6 +114,7 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
             dateTimeToggle={props.theme?.chatWindow?.dateTimeToggle}
             renderHTML={props.theme?.chatWindow?.renderHTML}
           />
+          </div>
         </div>
       </Show>
     </>

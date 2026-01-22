@@ -87,12 +87,15 @@ export const GuestBubble = (props: Props) => {
   return (
     <div class="flex justify-end mb-2 items-end guest-container" style={{ 'margin-left': '50px' }}>
       <div
-        class="max-w-full flex flex-col justify-center items-start chatbot-guest-bubble px-4 py-2 gap-2 mr-2"
+        class="max-w-[85%] flex flex-col justify-center items-start chatbot-guest-bubble px-4 py-3 gap-2 mr-2 modern-user-message modern-font"
         data-testid="guest-bubble"
         style={{
-          'background-color': props.backgroundColor ?? defaultBackgroundColor,
+          'background': 'linear-gradient(135deg, #4f46e5, #6366f1)',
           color: props.textColor ?? defaultTextColor,
-          'border-radius': '6px',
+          'border-radius': '16px',
+          'border': '1px solid rgba(255, 255, 255, 0.2)',
+          'box-shadow': '0 2px 8px rgba(79, 70, 229, 0.3)',
+          'animation': 'message-slide-up 0.3s ease-out',
         }}
       >
         {props.message.fileUploads && props.message.fileUploads.length > 0 && (
@@ -108,7 +111,10 @@ export const GuestBubble = (props: Props) => {
           <span
             ref={setUserMessageRef}
             class="mr-2 whitespace-pre-wrap"
-            style={{ 'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px` }}
+            style={{ 
+              'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px`,
+              'line-height': '1.6'
+            }}
           />
         )}
       </div>

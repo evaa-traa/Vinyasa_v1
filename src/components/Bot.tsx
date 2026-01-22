@@ -2393,39 +2393,67 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
           {props.showTitle ? (
             <div
-              class="flex flex-row items-center w-full h-[50px] absolute top-0 left-0 z-10"
+              class="flex flex-row items-center w-full h-[56px] absolute top-0 left-0 z-10 modern-header"
               style={{
                 background: props.titleBackgroundColor || props.bubbleBackgroundColor || defaultTitleBackgroundColor,
                 color: props.titleTextColor || props.bubbleTextColor || defaultBackgroundColor,
-                'border-top-left-radius': props.isFullPage ? '0px' : '6px',
-                'border-top-right-radius': props.isFullPage ? '0px' : '6px',
+                'border-top-left-radius': props.isFullPage ? '0px' : '20px',
+                'border-top-right-radius': props.isFullPage ? '0px' : '20px',
+                'border-bottom': '1px solid rgba(0, 0, 0, 0.05)',
+                'backdrop-filter': 'blur(10px)',
+                'background': 'rgba(255, 255, 255, 0.8)',
               }}
             >
               <Show when={props.titleAvatarSrc}>
                 <>
-                  <div style={{ width: '15px' }} />
-                  <Avatar initialAvatarSrc={props.titleAvatarSrc} />
+                  <div style={{ width: '16px' }} />
+                  <div class="modern-avatar">
+                    <Avatar initialAvatarSrc={props.titleAvatarSrc} />
+                  </div>
                 </>
               </Show>
               <Show when={props.title}>
-                <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
+                <div class="px-4">
+                  <div class="font-semibold text-base modern-font">{props.title}</div>
+                  <div class="text-xs opacity-70 modern-font">Ask anything • Powered by AI</div>
+                </div>
               </Show>
               <div style={{ flex: 1 }} />
-              <DeleteButton
-                sendButtonColor={props.bubbleTextColor}
-                type="button"
-                isDisabled={messages().length === 1}
-                class="my-2 ml-2"
-                on:click={clearChat}
-              >
-                <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-              </DeleteButton>
+              <div class="flex items-center gap-2 pr-4">
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-full transition-all hover:bg-gray-100 active:bg-gray-200"
+                  title="Full Screen"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="text-gray-600">
+                    <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                  </svg>
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-full transition-all hover:bg-gray-100 active:bg-gray-200"
+                  title="Minimize"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="text-gray-600">
+                    <path fill="currentColor" d="M19 13H5v-2h14v2z"/>
+                  </svg>
+                </button>
+                <DeleteButton
+                  sendButtonColor={props.bubbleTextColor}
+                  type="button"
+                  isDisabled={messages().length === 1}
+                  class="w-8 h-8 flex items-center justify-center rounded-full transition-all hover:bg-red-50 active:bg-red-100"
+                  on:click={clearChat}
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="text-red-500">
+                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+                </DeleteButton>
+              </div>
             </div>
           ) : null}
           <div class="flex flex-col w-full h-full justify-start z-0">
             <div
               ref={chatContainer}
-              class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth"
+              class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth modern-scrollbar modern-font"
             >
               <For each={[...messages()]}>
                 {(message, index) => {
